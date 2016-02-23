@@ -1,0 +1,49 @@
+{
+  "name": "enchannel-socketio-backend",
+  "version": "0.0.1",
+  "description": "enchannel powered by socket.io, to be used with kernel-relay",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run build",
+    "clean": "rimraf lib/",
+    "prebuild": "npm run clean",
+    "build": "babel src/ --out-dir lib/ --source-maps",
+    "build:watch": "npm run build -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nteract/enchannel-socketio-backend.git"
+  },
+  "keywords": [
+    "enchannel",
+    "socket.io",
+    "socket",
+    "websocket",
+    "backend",
+    "relay",
+    "kernel"
+  ],
+  "author": "nteract contributors",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/nteract/enchannel-socketio-backend/issues"
+  },
+  "homepage": "https://github.com/nteract/enchannel-socketio-backend#readme",
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "rimraf": "^2.5.2"
+  },
+  "dependencies": {
+    "@reactivex/rxjs": "^5.0.0-beta.2",
+    "browser-request": "^0.3.3",
+    "socket.io": "^1.4.5",
+    "url-join": "0.0.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
