@@ -23,6 +23,7 @@
     "webpack": "^1.12.14"
   },
   "dependencies": {
-    "enchannel-socketio-backend": "file:///home/jon/github.com/nteract/enchannel-socketio-backend"
+    "enchannel-socketio-backend": "file:///home/jon/github.com/nteract/enchannel-socketio-backend",
+    "node-uuid": "^1.4.7"
   }
 }
