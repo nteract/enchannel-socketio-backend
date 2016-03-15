@@ -23,6 +23,8 @@ spawning and shutting down a kernel.  This allows one to spawn a kernel, start
 some compute on it, disconnect and reconnect at a later time, and shutdown the
 kernel when appropriate.
 
+To use the enchannel-socketio-backend, you must have access to a running [kernel-relay server](https://github.com/nteract/kernel-relay).
+
 #### spawn
 Spawns a remote kernel by name.  Takes two arguments:
 
