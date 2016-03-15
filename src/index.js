@@ -83,13 +83,26 @@ export function disconnect(channels) {
   // TODO: Remove in 0.2.0 or later!
   if (typeof channels === 'string') {
     console.warn('disconnect(kernelId) is deprecated.  Use disconnect(channels) instead.');
-    channels = connectionsMap[channels];
+    const connections = connectionsMap[channels];
+    connections.shell.disconnect();
+    connections.stdio.disconnect();
+    connections.iopub.disconnect();
+    connections.control.disconnect();
+    return Promise.resolve();
+  } else {
+
+    channels.shell.complete();
+    channels.stdio.complete();
+    channels.iopub.complete();
+    channels.control.complete();
+    return Promise.resolve();
   }
 
   channels.shell.disconnect();
   channels.stdio.disconnect();
   channels.iopub.disconnect();
   channels.control.disconnect();
+  return Promise.resolve();
 }
 
 export function shutdown(endpoint, kernelId) {
