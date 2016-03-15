@@ -79,15 +79,21 @@ export function connect(endpoint, kernelId) {
   });
 }
 
-export function disconnect(kernelId) {
-  connectionsMap[kernelId].shell.disconnect();
-  connectionsMap[kernelId].stdio.disconnect();
-  connectionsMap[kernelId].iopub.disconnect();
-  connectionsMap[kernelId].control.disconnect();
+export function disconnect(channels) {
+  // TODO: Remove in 0.2.0 or later!
+  if (typeof channels === 'string') {
+    console.warn('disconnect(kernelId) is deprecated.  Use disconnect(channels) instead.');
+    channels = connectionsMap[channels];
+  }
+
+  channels.shell.disconnect();
+  channels.stdio.disconnect();
+  channels.iopub.disconnect();
+  channels.control.disconnect();
 }
 
-export function shutdown(endpoint, id) {
-  return rp(urljoin(endpoint, 'shutdown', id)).then(x => {
-    if (JSON.parse(x).id !== id) return Promise.reject('wrong kernel stopped');
+export function shutdown(endpoint, kernelId) {
+  return rp(urljoin(endpoint, 'shutdown', kernelId)).then(x => {
+    if (JSON.parse(x).kernelId !== kernelId) return Promise.reject('wrong kernel stopped');
   });
 }

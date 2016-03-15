@@ -95,18 +95,22 @@ enchannelBackend.shutdown('http://localhost:3000/', id).then(() => {
 
 #### disconnect
 
-Disconnects from a kernel by id.  Accepts one argument, the kernel id string.
+Disconnects from a kernel by closing the channels.  Accepts one argument, the enchannel channels object.
 
-Returns nothing.
+Returns promise which resolves on success.
 
 ```
-disconnect(kernelId)
+disconnect(channels)
 ```
 
 Usage example
 
 ```js
-enchannelBackend.disconnect(id);
+enchannelBackend.disconnect(channels).then(() => {
+  console.log('disconnected');
+}).catch(err => {
+  console.error('Could not close the channels', err);
+});
 ```
 
 ## Development
