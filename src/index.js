@@ -2,7 +2,7 @@ const request = require('browser-request');
 const urljoin = require('url-join');
 const io = require('socket.io-client');
 const connectionsMap = {};
-const rxjs = require('@reactivex/rxjs');
+const rxjs = require('rxjs/Rx');
 const { Subscriber, Observable, Subject } = rxjs;
 
 // BEGIN FROM ENCHANNEL-ZMQ
