@@ -1,6 +1,6 @@
 {
   "name": "enchannel-socketio-backend",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "enchannel powered by socket.io, to be used with kernel-relay",
   "main": "lib/index.js",
   "scripts": {
