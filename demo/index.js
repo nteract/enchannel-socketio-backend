@@ -1,5 +1,5 @@
 import { spawn, shutdown, connect, disconnect } from 'enchannel-socketio-backend';
-import * as uuid from 'node-uuid';
+import * as uuid from 'uuid';
 
 export function run() {
   const endpoint = prompt('kernel-relay endpoint:', 'http://localhost:3000/');
