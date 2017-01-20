@@ -1,4 +1,6 @@
 # enchannel-socketio-backend
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/nteract/enchannel-socketio-backend.svg)](https://greenkeeper.io/)
 ![enchannel version](https://img.shields.io/badge/enchannel-1.1-ff69b4.svg)
 
 :electric_plug: enchannel powered by socket.io, designed to be used with
